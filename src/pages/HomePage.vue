@@ -1,24 +1,29 @@
 <template>
-  <div class="container-fluid">
-  <div class="row" v-for="g in gifts" :gift="g">
- <gift-card/>
+  
+<div class="container-fluid">
+  <div class="row" >
+ <GiftCard v-for="g in gifts" :gift="g" />
+    
   </div>
-  </div>
+</div>
 </template>
+
+    
 
 <script>
 import { AppState } from "../AppState.js";
-import { Gift } from "../models/Gift.js";
-//v-for="c in cats" :cat="c"
-  
+
+
+
+
 export default {
-  setup(){
-    name: 'Home'
-    let gifts = AppState.gifts
-    return{
-gifts
-    }
-  }
+    setup() {
+        let gifts = AppState.gifts;
+        return {
+            gifts
+        };
+    },
+   
 }
 </script>
 
@@ -41,3 +46,7 @@ gifts
   }
 }
 </style>
+
+
+/**
+
