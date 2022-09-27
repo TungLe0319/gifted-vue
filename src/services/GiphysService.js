@@ -13,7 +13,7 @@ class GiphysService {
         limit:20
       },
     });
-    console.log(res.data.data);
+    // console.log(res.data.data);
 AppState.giphys = res.data.data.map(g=> new Giphy(g))
   }
 

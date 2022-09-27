@@ -40,13 +40,20 @@
 </template>
 
 <script>
-import { ref } from 'vue';
+import { ref, watchEffect } from 'vue';
+import { AppState } from "../AppState.js";
 import { giftsService } from '../services/GiftsService.js';
 import { giphysService } from '../services/GiphysService.js';
 import Pop from '../utils/Pop.js';
 
 export default {
   setup() {
+
+    watchEffect(()=>{
+      if (AppState.selectedGiphy) {
+        editable.value.url = AppState.selectedGiphy
+      }
+    })
     const editable = ref({});
     return {
       editable,
@@ -58,6 +65,9 @@ export default {
           Pop.error(error);
         }
       },
+
+
+      
     };
   },
 };
