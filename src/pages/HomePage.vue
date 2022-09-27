@@ -1,10 +1,16 @@
 <template>
   
-<div class="container-fluid">
-  <div class="row"  >
- <GiftCard v-for="g in gifts" :gift="g" />
+<div class="container">
+  <div class="row gifts " >
+   <div class="col-md-3" v-for="g in gifts" :key="g" >
+
+
+     <giftCard :gift="g"/>
+   </div>
+    
     
   </div>
+  <Form/>
 </div>
 </template>
 
@@ -13,17 +19,21 @@
 <script>
 import { AppState } from "../AppState.js";
 
-
+import GiftCard from "../components/GiftCard.vue";
+import { Gift } from "../models/Gift.js";
+import Form from "../components/Form.vue";
 
 
 export default {
+
     setup() {
-        let gifts = AppState.gifts;
+const gifts = AppState.gifts
         return {
-            gifts
-        };
+gifts
+        }
+        
     },
-   
+    components: { GiftCard ,Form}
 }
 </script>
 

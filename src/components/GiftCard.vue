@@ -1,19 +1,19 @@
 <template>
-<div class="col-md-3">
-    <div class="giftCard">
+
+    
 <div
   class="card mt-3 d-flex justify-content-center align-items-center  elevation-5 border-dark border-2 border mx-4 my-2 present"
   style="width: 15rem;height: 20rem;">
-  <div v-show="gift.opened">
+  <div v-if="gift.opened">
     <img :src="gift.url" alt="" style="width:12rem;" class="rounded elevation-4  ">
   </div>
   <div class="d-flex text-center text-shadow" v-if="!gift.opened">
-    <button class="btn bg-light  p-3 openBtn" @click="gift.opened = !gift.opened" >
-     <b>   Open Gift </b> 
+    <button class="btn   p-3 openBtn" @click="gift.opened = !gift.opened" >
+     <img src="https://cdn-icons-png.flaticon.com/512/656/656857.png" alt="" width="190" class="wrap">
     </button>
   
   </div>
-  <div v-show="gift.opened" class="mt-3">
+  <div v-if="gift.opened" class="mt-3">
     <div class=" bg-light  p-2 rounded scrollme">
 
       <p >{{gift.tag}}</p>
@@ -22,13 +22,13 @@
   
 </div>
 
-  </div>
-</div>
+
+
 </template>
 
 
 <script>
-import { AppState } from "../AppState.js";
+
 import { Gift } from "../models/Gift.js";
 import { giftsService } from "../services/GiftsService.js";
 
@@ -39,10 +39,12 @@ import { giftsService } from "../services/GiftsService.js";
 export default {
   
   props:{
-    gift:{type: Gift, required: true}
+
+    //if I bring down the intellisense import in appstate i don't have to use in props gift:(type: Gift) i can just do Gift.
+    gift:{ Gift}
   },
   setup(props){
-    let gift= props.gift
+    const gift= props.gift
  
 
     
@@ -89,7 +91,7 @@ export default {
 }
 
 .present{
-  background-image: url(https://media3.giphy.com/media/KVZWZQoS0yqfIiTAKq/giphy.gif?cid=ecf05e47atub5cuvairkzl96wdbnf3x5cjep7l7y5vsmfkdo&rid=giphy.gif&ct=g);
+  background-image: url(https://i.giphy.com/media/CVqJvbJcn3cxHebeGE/giphy.webp);
   filter: sepia(50%);
 }
 
@@ -97,6 +99,12 @@ export default {
   max-height: 5vh;
   
   overflow-y: auto;
+}
+
+.wrap:hover{
+
+  filter: hue-rotate(90deg) ;
+  transition: all 0.3s ease-in;
 }
 
 </style>

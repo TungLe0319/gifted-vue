@@ -8,10 +8,11 @@ export const AppState = reactive({
   account: {},
   //Very similar to appState from before, AppState now has a Cap "A"
   
-gift:{tag:'Test-Tag0',
-url:'//thiscatdoesnotexist.com',
-opened:false},
-
+  gift:{tag:'Test-Tag0',
+  url:'//thiscatdoesnotexist.com',
+  opened:false},
+  
+  /**@type {import('./models/Gift.js').Gift[]} */
   gifts: [
     {
       tag: 'Test-Tag1',

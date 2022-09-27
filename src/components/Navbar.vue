@@ -19,16 +19,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto">
         <li>
-          <router-link
+          <!-- <router-link
             :to="{ name: 'About' }"
             class="btn text-success lighten-30 selectable text-uppercase"
           >
             About
-          </router-link>
+          </router-link> -->
         </li>
 
-        <li>
-
+        <li class="ms-4 d-flex align-items-center">
+          <h5>Add:</h5>
+<button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#formOffCanvas" aria-controls="offcanvasExample">
+ <img src="https://media3.giphy.com/media/3oz8xBkRsgPTnbK1GM/giphy.gif?cid=ecf05e47nptlufok4vlbpprnobc52s1u2r6vwez0dq17gpm1&rid=giphy.gif&ct=g" alt="" width="80" height="80" class="rounded-circle gift-btn">
+</button>
 
         </li>
       </ul>
@@ -39,10 +42,13 @@
 </template>
 
 <script>
+
+
 export default {
   setup() {
     return {};
   },
+ 
 };
 </script>
 
@@ -57,5 +63,13 @@ a:hover {
   border-bottom: 2px solid var(--bs-success);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+
+.gift-btn:hover{
+
+transform: scale(1.14);
+filter: hue-rotate(180deg);
+transition: all 0.5s ease;
 }
 </style>

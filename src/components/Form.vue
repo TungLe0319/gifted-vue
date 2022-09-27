@@ -1,29 +1,23 @@
 <template>
-  <div class="form">
+  <div class="form ">
 
-<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-  Button with data-bs-target
-</button>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="formOffCanvas" aria-labelledby="formOffCanvas">
+  
+  <div class="offcanvas-body offbg">
+   
+   <form >
+<div class="mb-3">
+  <label for="formGroupExampleInput" class="form-label">Example label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
+</div>
+<div class="mb-3">
+  <label for="formGroupExampleInput2" class="form-label">Another label</label>
+  <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
+</div>
+
+   </form>
   </div>
 </div>
 
@@ -42,4 +36,13 @@ export default {
 
 <style lang="scss" scoped>
 
+.offbg{
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic.vecteezy.com%2Fsystem%2Fresources%2Fpreviews%2F000%2F464%2F422%2Foriginal%2Fvector-present-gift-box-seamless-pattern-suitable-for-use-as-wrapping-paper-gift.jpg&f=1&nofb=1&ipt=e79163acac482545c6eac819fe91cc5edee80cfc409128c09f87212d25ead1f9&ipo=images);
+  background-size: contain;
+  background-position: center;
+  
+}
+
 </style>
+
+ 
