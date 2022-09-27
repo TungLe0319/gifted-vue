@@ -11,7 +11,9 @@
 
 
    </form>
+  
   </div>
+  <searchForm/>
 </div>
 
   </div>

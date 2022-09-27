@@ -7,7 +7,7 @@ class GiftsService{
 
    async getGifts() {
     const res = await api.get('/api/gifts');
-      console.log('response:', res.data);
+      // console.log('response:', res.data);
       AppState.gifts = res.data.map(g => new Gift(g))
    }
 

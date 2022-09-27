@@ -8,9 +8,8 @@ export const api = Axios.create({
 
 
 export const giphyServer = Axios.create({
-  baseURL: 'api.giphy.com',
+  baseURL: 'https://api.giphy.com/v1/gifs',
   timeout: 8000,
- 
 });
 
 //params:{

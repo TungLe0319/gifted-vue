@@ -1,15 +1,15 @@
 import { giphyServer } from './AxiosService.js';
 
 class GiphysService {
-  async getGiphys() {
-    const res = await giphyServer.get('/v1/gifs/search', {
+  async getGiphys(searchInput) {
+    const res = await giphyServer.get(`/search`, {
       params: {
-        api_key: 'SHAhnnBWk8sW7Pyga6hif9bQ8LLrlDj3',
-        q: '',
-      
+        api_key: 'r5x2L1bUvO5l0i4DnRZ5NeEP9baGRMSd',
+        rating: 'pg-13',
+        q: searchInput,
       },
     });
-    console.log(res.data);
+    console.log(res.data.data);
 
   }
 
