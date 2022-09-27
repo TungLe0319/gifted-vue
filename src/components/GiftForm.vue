@@ -7,7 +7,7 @@
   
   <div class="offcanvas-body offbg">
    
-   <form  @submit="">
+   <form >
 <div class="mb-3">
   <label for="formGroupExampleInput" class="form-label">Example label</label>
   <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">

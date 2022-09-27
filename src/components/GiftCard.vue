@@ -36,13 +36,13 @@ import { giftsService } from '../services/GiftsService.js';
 export default {
   props: {
     //if I bring down the intellisense import in AppState i don't have to use in props gift:(type: Gift) i can just do Gift.
-    gift: { Gift },
+    gift: { Gift , required: true},
   },
   setup(props) {
     const gift = props.gift;
 
     return {
-      gift,
+    
     };
   },
 };

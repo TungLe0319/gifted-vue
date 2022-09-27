@@ -10,7 +10,7 @@
     
     
   </div>
-  <Form/>
+  <GiftForm/>
 </div>
 </template>
 
@@ -21,7 +21,7 @@ import { AppState } from "../AppState.js";
 
 import GiftCard from "../components/GiftCard.vue";
 import { Gift } from "../models/Gift.js";
-import Form from "../components/Form.vue";
+import GiftForm from "../components/GiftForm.vue";
 
 
 export default {
@@ -33,7 +33,7 @@ gifts
         }
         
     },
-    components: { GiftCard ,Form}
+    components: { GiftCard ,GiftForm}
 }
 </script>
 
