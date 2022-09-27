@@ -1,77 +1,67 @@
 <template>
-  
-<div class="container">
-  <div class="row gifts " >
-   <div class="col-md-3" v-for="g in gifts" :key="g" >
-
-
-     <giftCard  :gift="g"/>
-   </div>
-    
-    
+  <div class="container">
+    <div class="row gifts justify-content-center scrollme">
+      <giftCard v-for="gift in gifts" :key="gift.id" :gift="gift" />
+    </div>
+ 
   </div>
-  <giftForm/>
-</div>
 </template>
 
-    
-
 <script>
-import { AppState } from "../AppState.js";
+import { AppState } from '../AppState.js';
+import { giftsService } from '../services/GiftsService.js';
+import Pop from '../utils/Pop.js';
+import { logger } from '../utils/Logger.js';
 
-import GiftCard from "../components/GiftCard.vue";
-import { Gift } from "../models/Gift.js";
-import GiftForm from "../components/GiftForm.vue";
-import { giftsService } from "../services/GiftsService.js";
-import Pop from "../utils/Pop.js";
-import { logger } from "../utils/Logger.js";
-
+import { giphysService } from "../services/GiphysService.js";
+import { computed } from "@vue/reactivity";
 
 export default {
-
-    setup() {
-const gifts = AppState.gifts
-
-async function getGifts(){
-  try {
-    
-      await giftsService.getGifts()
-    } catch (error) {
-      logger.error('[gettingGifts]')
-      console.error('[gettingGifts]',error)
-      Pop.error(error)
+  setup() {
+    async function getGifts() {
+      try {
+        await giftsService.getGifts();
+      } catch (error) {
+        logger.error('[gettingGifts]');
+        console.error('[gettingGifts]', error);
+        Pop.error(error);
+      }
     }
-}
-getGifts()
-        return {
-gifts
+    getGifts();
+
+    async function getGiphys(){
+      try {
+          await giphysService.getGiphys()
+        } catch (error) {
+          logger.error('[getGiphys]')
+          console.error('[getGiphys]',error)
+          Pop.error(error)
         }
-        
-    },
-    components: { GiftCard ,GiftForm}
-}
+    }
+
+    getGiphys()
+    return {
+      gifts: computed(() => AppState.gifts),
+
+      async openGift() {
+        try {
+          await giftsService.openGift();
+        } catch (error) {
+          logger.error('[openGift]');
+          console.error('[openGift]', error);
+          Pop.error(error);
+        }
+      },
+    };
+  },
+};
 </script>
 
 <style scoped lang="scss">
-.home{
-  display: grid;
-  height: 80vh;
-  place-content: center;
-  text-align: center;
-  user-select: none;
-  .home-card{
-    width: 50vw;
-    > img{
-      height: 200px;
-      max-width: 200px;
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
-    }
-  }
+.scrollme {
+  max-height: 75vh;
+  overflow: auto;
 }
 </style>
 
-
 /**
-

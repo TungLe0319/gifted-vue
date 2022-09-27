@@ -1,16 +1,20 @@
 <template>
+  <div class="col-md-3 ">
+
+  
   <div
-    class="card mt-3 d-flex justify-content-center align-items-center elevation-5 border-dark border-2 border mx-4 my-2 present"
+    class="card mt-1 d-flex justify-content-center align-items-center elevation-5 border-dark border-2 border  my-2 present"
     style="width: 15rem; height: 20rem"
   >
     <div v-if="gift.opened">
       <img
         :src="gift.url"
-        alt=""
-        style="width: 12rem"
-        class="rounded elevation-4"
+        :alt="gift.opened"
+       
+        class="rounded elevation-4 gifimg"
       />
     </div>
+    
     <div class="d-flex text-center text-shadow" v-if="!gift.opened">
       <button class="btn p-3 openBtn" @click="gift.opened = !gift.opened">
         <img
@@ -24,9 +28,10 @@
     <div v-if="gift.opened" class="mt-3">
       <div class="bg-light p-2 rounded scrollme">
         <p>{{ gift.tag }}</p>
-        <p>{{ userName}}</p>
+        <p></p>
       </div>
     </div>
+  </div>
   </div>
 </template>
 
@@ -82,5 +87,11 @@ export default {
 .wrap:hover {
   filter: hue-rotate(90deg);
   transition: all 0.3s ease-in;
+}
+
+.gifimg{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
 }
 </style>
