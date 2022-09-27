@@ -1,7 +1,7 @@
 <template>
   
 <div class="container-fluid">
-  <div class="row" >
+  <div class="row"  >
  <GiftCard v-for="g in gifts" :gift="g" />
     
   </div>

@@ -42,7 +42,7 @@ export default {
     gift:{type: Gift, required: true}
   },
   setup(props){
-    const gift= props.gift
+    let gift= props.gift
  
 
     
