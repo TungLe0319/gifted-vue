@@ -52,15 +52,6 @@ export default {
    gift,
 
   
-//  async getGifts(){
-//   try {
-//       await  giftsService.getGifts()
-//     } catch (error) {
-//       console.error('[]',error)
-//       Pop.error(error)
-//     }
-//    }
- 
 
 
     }
