@@ -17,7 +17,8 @@ export const AppState = reactive({
   
   
   /**@type {import('./models/Giphy').Giphy[]} */
-giphys:[]
+giphys:[],
+selectedGiphy:''
 });
 
 
