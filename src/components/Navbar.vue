@@ -30,7 +30,7 @@
         <li class="ms-4 d-flex align-items-center">
           <h5>Add:</h5>
 <button class="btn " type="button" data-bs-toggle="offcanvas" data-bs-target="#formOffCanvas" aria-controls="offcanvasExample">
- <img src="https://media3.giphy.com/media/3oz8xBkRsgPTnbK1GM/giphy.gif?cid=ecf05e47nptlufok4vlbpprnobc52s1u2r6vwez0dq17gpm1&rid=giphy.gif&ct=g" alt="" width="80" height="80" class="rounded-circle gift-btn">
+ <img src="https://media3.giphy.com/media/3oz8xBkRsgPTnbK1GM/giphy.gif?cid=ecf05e47nptlufok4vlbpprnobc52s1u2r6vwez0dq17gpm1&rid=giphy.gif&ct=g" alt="" width="60" height="60" class="rounded-circle gift-btn">
 </button>
 
         </li>
