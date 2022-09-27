@@ -12,31 +12,8 @@ export const AppState = reactive({
   url:'//thiscatdoesnotexist.com',
   opened:false},
   
-  /**@type {import('./models/Gift.js').Gift[]} */
-  gifts: [
-    {
-      tag: 'Test-Tag1',
-      url: '//thiscatdoesnotexist.com',
-      opened: false,
-    },
-    {
-      tag: 'Test-Tag2',
-      url: '//thiscatdoesnotexist.com',
-      opened: false,
-    },
-    
-    {
-      tag: 'Test-Tag3',
-      url: '//thiscatdoesnotexist.com',
-      opened: false,
-    },
-    
-    {
-      tag: 'Test-Tag4',
-      url: '//thiscatdoesnotexist.com',
-      opened: false,
-    },
-  ]
+  /**@type {import('./models/Gift').Gift[]} */
+  gifts: []
 });
 
 

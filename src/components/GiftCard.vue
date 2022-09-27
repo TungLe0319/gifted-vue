@@ -24,6 +24,7 @@
     <div v-if="gift.opened" class="mt-3">
       <div class="bg-light p-2 rounded scrollme">
         <p>{{ gift.tag }}</p>
+        <p>{{ userName}}</p>
       </div>
     </div>
   </div>
@@ -36,14 +37,14 @@ import { giftsService } from '../services/GiftsService.js';
 export default {
   props: {
     //if I bring down the intellisense import in AppState i don't have to use in props gift:(type: Gift) i can just do Gift.
-    gift: { Gift , required: true},
+    //since this is now called gift, in homepage.vue with <GiftCard :gift=""/> gift is the prop here.
+    gift: { Gift, required: true },
+   
   },
   setup(props) {
-    const gift = props.gift;
+    //I don't have to do const gift = props.gift..
 
-    return {
-    
-    };
+    return {};
   },
 };
 </script>

@@ -5,12 +5,12 @@
    <div class="col-md-3" v-for="g in gifts" :key="g" >
 
 
-     <giftCard :gift="g"/>
+     <giftCard  :gift="g"/>
    </div>
     
     
   </div>
-  <GiftForm/>
+  <giftForm/>
 </div>
 </template>
 
@@ -22,12 +22,27 @@ import { AppState } from "../AppState.js";
 import GiftCard from "../components/GiftCard.vue";
 import { Gift } from "../models/Gift.js";
 import GiftForm from "../components/GiftForm.vue";
+import { giftsService } from "../services/GiftsService.js";
+import Pop from "../utils/Pop.js";
+import { logger } from "../utils/Logger.js";
 
 
 export default {
 
     setup() {
 const gifts = AppState.gifts
+
+async function getGifts(){
+  try {
+    
+      await giftsService.getGifts()
+    } catch (error) {
+      logger.error('[gettingGifts]')
+      console.error('[gettingGifts]',error)
+      Pop.error(error)
+    }
+}
+getGifts()
         return {
 gifts
         }
