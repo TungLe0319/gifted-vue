@@ -34,6 +34,7 @@
         </form>
 
         <searchForm />
+        
       </div>
     </div>
   </div>
